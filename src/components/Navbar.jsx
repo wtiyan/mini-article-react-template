@@ -1,50 +1,44 @@
 import React, {useState} from 'react';
-import { close, logo, menu } from '../assets';
+import { close, menu } from '../assets';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const[toggle,setToggle]=useState(false)
   const handleClick = ()=>setToggle(!toggle)
 
   return (
-    <div className='w-full h-[80px] z-10 bg-white drop-shadow-lg relative'>
-        <div className='flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto'>
+    <div className='w-full h-[80px] z-10 bg-[#202E60] text-white drop-shadow-lg relative'>
+      <div className='flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto'>
 
-        <div className='flex items-center'>
-            Mini Article
-            {/*<img src={logo} alt="logo" className='sm:ml-10 ss:ml-10 md:ml-3 opacity-[55%] w-full h-[25px]' />*/}
+        <div className='flex items-center pl-4 md:pl-0'>
+        <Link to={`/`}><h1 className='text-2xl font-bold cursor-pointer'>Mini Article</h1></Link>
         </div>
         
-        <div className='flex items-center'>
-            <ul className='hidden md:flex'>
-                <li>Home</li>
-                <li>All Articles</li>
-                <li>Categories</li>
-            </ul>
+        <div className='hidden md:flex items-center space-x-6'>
+          <ul className='flex space-x-6'>
+            <li className='cursor-pointer'><Link to={`/`}>Home</Link></li>
+            <li className='cursor-pointer'>Categories</li>
+          </ul>
         </div>
 
-        <div className='hidden md:flex sm:mr-10 md:mr-10'>
-            <button className='border-none bg-transparent text-black mr-4'>Login</button>
-            <button className='px-8 py-3'>Sign Up</button>
+        <div className='hidden md:flex items-center space-x-6'>
+            <Link to={`/login`}><button className='border-none bg-transparent text-white mr-4 transition-colors hover:text-[#1A9FDA]'>Login</button></Link>
+            <Link to={`/registration`}><button className='px-6 py-2 bg-[#1A9FDA] rounded-md'>Sign Up</button></Link>
 
         </div>
         
         <div className='md:hidden' onClick={handleClick}>
             <img src={!toggle?menu:close} alt="menu" className='w-[28px] h-[28px] object-contain mr-10' />
         </div>
-        
-        {/* 
-        <div className='md:hidden' onClick={handleClick}>
-          <img src={!toggle?menu:close} alt="menu" className='w-[28px] h-[28px] object-contain mr-10' />
-        </div>
-        */}
-        </div>
+
+      </div>
       <ul className={toggle?'absolute bg-white w-full px-8 md:hidden':'hidden'}>
-              <li>Home</li>
-              <li>All Articles</li>
-              <li>Categories</li>
+        <li className='text-black'>Home</li>
+        <li className='text-black'>All Articles</li>
+        <li className='text-black'>Categories</li>
               <div className='flex flex-col my-4'>
-                  <button className='bg-transparent text-black mb-4 py-3 px-8'>Login</button>
-                  <button className='px-8 py-3'>Sign Up</button>
+                    <Link to={`/login`}><button className='bg-transparent text-black mb-4 py-3 px-8'>Login</button></Link>
+                    <Link to={`/registration`}><button className='px-8 py-3'>Sign Up</button></Link>
               </div>
       </ul>
     </div>
