@@ -46,16 +46,16 @@ const Blogs = () => {
                 {blogs.map((blogsmap)=>
                     <div  className='bg-white rounded-xl overflow-hidden drop-shadow-md'>
                         <Link to={`/blog/${blogsmap.id}`}>
-                            <img className='h-56 w-full object-cover' src={blogsmap.coverImg} />
+                        <img className='h-56 w-full object-contain' src={blogsmap.coverImg} alt={blogsmap.title} />
                         </Link>
                         <div className='p-8'>
                         <Link to={`/blog/${blogsmap.id}`}>
                             <h3 className='font-bold text-2xl my-1'>{blogsmap.title}</h3>
                         </Link>
                         <div className='flex space-x-2 mt-2'>
-                            {blogsmap.category.map((category, index) => (
+                            {blogsmap.category.map((category) => (
                             <span
-                                key={index}
+                                key={category}
                                 className='px-2 py-1 text-sm font-medium bg-[#1A9FDA] text-gray-800 rounded'
                             >
                                 {category}

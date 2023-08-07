@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className='hidden md:flex items-center space-x-6'>
           <ul className='flex space-x-6'>
             <li className='cursor-pointer'><Link to={`/`}>Home</Link></li>
-            <li className='cursor-pointer'>Categories</li>
+            <li className='cursor-pointer'><Link to={`/categories`}>Categories</Link></li>
           </ul>
         </div>
 
@@ -33,9 +33,8 @@ const Navbar = () => {
 
       </div>
       <ul className={toggle?'absolute bg-white w-full px-8 md:hidden':'hidden'}>
-        <li className='text-black'>Home</li>
-        <li className='text-black'>All Articles</li>
-        <li className='text-black'>Categories</li>
+        <li className='text-black'><Link to={`/`}>Home</Link></li>
+        <li className='text-black'><Link to={`/categories`}>Categories</Link></li>
               <div className='flex flex-col my-4'>
                     <Link to={`/login`}><button className='bg-transparent text-black mb-4 py-3 px-8'>Login</button></Link>
                     <Link to={`/registration`}><button className='px-8 py-3'>Sign Up</button></Link>

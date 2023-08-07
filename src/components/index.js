@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import BlogContent from "./BlogContent";
 import RegistrationForm from "./RegistrationForm";
 import LoginForm from "./LoginForm";
+import Categories from "./Categories";
 
 export {
     Navbar,
@@ -11,5 +12,6 @@ export {
     Footer,
     BlogContent,
     RegistrationForm,
-    LoginForm
+    LoginForm,
+    Categories
 }
