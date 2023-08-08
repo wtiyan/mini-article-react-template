@@ -1,16 +1,16 @@
 import Navbar from "./Navbar";
-import Blogs from "./Blogs";
+import Articles from "./Articles";
 import Footer from "./Footer";
-import BlogContent from "./BlogContent";
+import ArticleContent from "./ArticleContent";
 import RegistrationForm from "./RegistrationForm";
 import LoginForm from "./LoginForm";
 import Categories from "./Categories";
 
 export {
     Navbar,
-    Blogs,
+    Articles,
     Footer,
-    BlogContent,
+    ArticleContent,
     RegistrationForm,
     LoginForm,
     Categories

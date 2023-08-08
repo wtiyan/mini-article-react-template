@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Categories = () => {
 
-  const blogs=[
+  const articles=[
     {
         "id":1,
         'title':'What is Lorem Ipsum?',
@@ -38,10 +38,10 @@ const Categories = () => {
     },
 ]
 
-const allCategories = [...new Set(blogs.flatMap(blog => blog.category))]; // Mengambil semua kategori unik dari blogs
+const allCategories = [...new Set(articles.flatMap(article => article.category))]; // Mengambil semua kategori unik dari articles
 
 const [selectedCategory, setSelectedCategory] = useState(allCategories[0]);
-const filteredBlogs = blogs.filter(blog => blog.category.includes(selectedCategory));
+const filteredArticles = articles.filter(article => article.category.includes(selectedCategory));
 
 return (
   <div className='w-full bg-gray-100 py-10'>
@@ -67,11 +67,11 @@ return (
         </select>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-        {filteredBlogs.map(blog => (
-          <div key={blog.id} className='bg-white shadow rounded-lg p-4'>
-            <h2 className='text-lg font-semibold'>{blog.title}</h2>
-            <p className='text-sm text-gray-500'>{blog.category.join(', ')}</p>
-            <Link to={`/blog/${blog.id}`} className='block mt-2 text-blue-600 hover:underline'>
+        {filteredArticles.map(article => (
+          <div key={article.id} className='bg-white shadow rounded-lg p-4'>
+            <h2 className='text-lg font-semibold'>{article.title}</h2>
+            <p className='text-sm text-gray-500'>{article.category.join(', ')}</p>
+            <Link to={`/article/${article.id}`} className='block mt-2 text-blue-600 hover:underline'>
               Read more
             </Link>
           </div>

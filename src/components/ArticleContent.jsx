@@ -2,10 +2,10 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
-const BlogContent = () => {
+const ArticleContent = () => {
   const {id}=useParams()
 
-  const blogs=[
+  const articles=[
     {
         "id":1,
         'title':'What is Lorem Ipsum?',
@@ -40,19 +40,19 @@ const BlogContent = () => {
     },
 ]
 
-let blog = blogs.filter(blog=> blog.id== id)
-blog = blog[0]
+let article = articles.filter(article=> article.id== id)
+article = article[0]
         
   return (
     <div className='w-full pb-10 bg-[#f9f9f9]'>
       <div className='max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8'>
         <div className='grid lg:grid-cols-3 gap-8'>
           <div className='col-span-2 bg-white shadow rounded-lg overflow-hidden'>
-          <img className='h-[300px] w-full object-contain' src={blog.coverImg} alt={blog.title} />
+          <img className='h-[300px] w-full object-contain' src={article.coverImg} alt={article.title} />
             <div className='p-6'>
-              <h1 className='text-3xl font-semibold'>{blog.title}</h1>
+              <h1 className='text-3xl font-semibold'>{article.title}</h1>
               <div className='flex space-x-2 mt-2'>
-                {blog.category.map((category) => (
+                {article.category.map((category) => (
                   <span
                     key={category}
                     className='px-2 py-1 text-sm font-medium bg-[#1A9FDA] text-gray-800 rounded'
@@ -61,14 +61,14 @@ blog = blog[0]
                   </span>
                 ))}
               </div>
-              <ReactMarkdown className='mt-2 text-gray-500 text-justify' >{blog.content}</ReactMarkdown>
+              <ReactMarkdown className='mt-2 text-gray-500 text-justify' >{article.content}</ReactMarkdown>
             </div>
           </div>
           <div className='items-center w-full bg-white rounded-xl drop-shadow-md py-5 max-h-[250px]'>
                 <div>
-                    <img className='p-2 w-32 h-32 rounded-full mx-auto object-cover' src={blog.authorImg} />
-                    <h1 className='font-bold text-2xl text-center text-gray-900 pt-3'>{blog.authorName}</h1>
-                    <p className='text-center text-gray-900 font-medium'>{blog.authorDesc}</p>
+                    <img className='p-2 w-32 h-32 rounded-full mx-auto object-cover' src={article.authorImg} />
+                    <h1 className='font-bold text-2xl text-center text-gray-900 pt-3'>{article.authorName}</h1>
+                    <p className='text-center text-gray-900 font-medium'>{article.authorDesc}</p>
                 </div>
             </div>
         </div>
@@ -80,4 +80,4 @@ blog = blog[0]
   )
 }
 
-export default BlogContent
+export default ArticleContent

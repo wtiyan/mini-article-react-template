@@ -1,12 +1,12 @@
 import HomePage from "./HomePage";
-import BlogContentPage from "./BlogContentPage";
+import ArticleContentPage from "./ArticleContentPage";
 import UserRegistrationPage from "./UserRegistrationPage";
 import UserLoginPage from "./UserLoginPage";
 import CategoriesPage from "./CategoriesPage";
 
 export{
     HomePage,
-    BlogContentPage,
+    ArticleContentPage,
     UserRegistrationPage,
     UserLoginPage,
     CategoriesPage

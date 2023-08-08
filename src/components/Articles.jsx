@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
-const Blogs = () => {
+const Articles = () => {
 
-    const blogs=[
+    const articles=[
         {
             "id":1,
             'title':'What is Lorem Ipsum?',
@@ -43,17 +43,17 @@ const Blogs = () => {
     <div className='w-full bg-[#f9f9f9] py-[50px]'>
         <div className='max-w-[1240px] mx-auto'>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ss:grid-cols-1 gap-8 px-4 text-black'>
-                {blogs.map((blogsmap)=>
+                {articles.map((articlesmap)=>
                     <div  className='bg-white rounded-xl overflow-hidden drop-shadow-md'>
-                        <Link to={`/blog/${blogsmap.id}`}>
-                        <img className='h-56 w-full object-contain' src={blogsmap.coverImg} alt={blogsmap.title} />
+                        <Link to={`/article/${articlesmap.id}`}>
+                        <img className='h-56 w-full object-contain' src={articlesmap.coverImg} alt={articlesmap.title} />
                         </Link>
                         <div className='p-8'>
-                        <Link to={`/blog/${blogsmap.id}`}>
-                            <h3 className='font-bold text-2xl my-1'>{blogsmap.title}</h3>
+                        <Link to={`/article/${articlesmap.id}`}>
+                            <h3 className='font-bold text-2xl my-1'>{articlesmap.title}</h3>
                         </Link>
                         <div className='flex space-x-2 mt-2'>
-                            {blogsmap.category.map((category) => (
+                            {articlesmap.category.map((category) => (
                             <span
                                 key={category}
                                 className='px-2 py-1 text-sm font-medium bg-[#1A9FDA] text-gray-800 rounded'
@@ -62,8 +62,8 @@ const Blogs = () => {
                             </span>
                             ))}
                         </div>
-                        <ReactMarkdown className='mt-2 text-gray-600 text-xl line-break'>{`${blogsmap.content.substring(0, 150)}...`}</ReactMarkdown>
-                            <Link to={`/blog/${blogsmap.id}`} className='text-blue-500 font-medium'>
+                        <ReactMarkdown className='mt-2 text-gray-600 text-xl line-break'>{`${articlesmap.content.substring(0, 150)}...`}</ReactMarkdown>
+                            <Link to={`/article/${articlesmap.id}`} className='text-blue-500 font-medium'>
                                 Read more
                             </Link>
                         </div>
@@ -75,4 +75,4 @@ const Blogs = () => {
   )
 }
 
-export default Blogs
+export default Articles
