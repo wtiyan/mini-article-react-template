@@ -55,7 +55,7 @@ article = article[0]
                 {article.category.map((category) => (
                   <span
                     key={category}
-                    className='px-2 py-1 text-sm font-medium bg-[#1A9FDA] text-gray-800 rounded'
+                    className='px-2 py-1 text-sm font-medium bg-gray-400 text-white rounded'
                   >
                     {category}
                   </span>
