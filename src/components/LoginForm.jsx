@@ -12,13 +12,29 @@ const LoginForm = () => {
             <label htmlFor="identifier" className="block text-sm font-medium">
               Username
             </label>
-            <input type="text" id="identifier" name="identifier" className="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-400" required />
+            <input
+              type="text"
+              id="identifier"
+              name="identifier"
+              value=""
+              onChange=""
+              className="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-400"
+              required
+            />
           </div>
           <div className="mb-4">
             <label htmlFor="password" className="block text-sm font-medium">
               Password
             </label>
-            <input type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-400" required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value=""
+              onChange=""
+              className="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-400"
+              required
+            />
           </div>
           <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
             Login
