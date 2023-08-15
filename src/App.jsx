@@ -6,7 +6,7 @@ export default function App() {
     <div>
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
-          <Route path='/article/:id' element={<ArticleContentPage />}></Route>
+          <Route path='/article/:idFromURL' element={<ArticleContentPage />}></Route>
           <Route path="/registration" element={<UserRegistrationPage />} />
           <Route path="/login" element={<UserLoginPage />} />
           <Route path="/categories" element={<CategoriesPage />} />

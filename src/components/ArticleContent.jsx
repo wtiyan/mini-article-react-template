@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 const ArticleContent = () => {
-  const {id}=useParams()
+  const {idFromURL}=useParams()
 
   const articles=[
     {
@@ -40,7 +40,7 @@ const ArticleContent = () => {
     },
 ]
 
-let article = articles.filter(article=> article.id== id)
+let article = articles.filter(article=> article.id== idFromURL)
 article = article[0]
         
   return (
